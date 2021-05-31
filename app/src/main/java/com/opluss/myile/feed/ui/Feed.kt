@@ -86,7 +86,7 @@ fun newsList() {
                 )
             }
             Row(modifier = Modifier
-                .weight(2f)
+                .weight(1.1f)
                 .fillMaxWidth()) {
                 Column(horizontalAlignment = Alignment.Start, modifier = Modifier.weight(1f)) {
                     Image(
