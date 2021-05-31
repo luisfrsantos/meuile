@@ -1,4 +1,4 @@
-package com.opluss.myile.ui.theme
+package com.opluss.myile.commons.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

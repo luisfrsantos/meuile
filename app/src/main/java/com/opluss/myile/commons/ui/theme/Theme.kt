@@ -1,4 +1,4 @@
-package com.opluss.myile.ui.theme
+package com.opluss.myile.commons.ui.theme
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.opluss.myile.R
 
@@ -18,17 +19,16 @@ private val DarkColorPalette = darkColors(
 
 private val LightColorPalette = lightColors(
     primary = BurntYellow,
-    primaryVariant = BurntYellow,
+    primaryVariant = White,
     secondary = BurntYellow
 
 )
 
 @Composable
-fun MyIleTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun MyIleTheme(title: String, darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
     val colors: Colors = darckThemeSelector(darkTheme)
-
     Scaffold(
-        topBar = { topBarDefault() },
+        topBar = { topBarDefault(title) },
         content = {
             MaterialTheme(
                 colors = colors,
@@ -69,8 +69,8 @@ fun MyIleThemeNoActionBar(
 }
 
 @Composable
-private fun topBarDefault() {
-    TopAppBar(modifier = Modifier.fillMaxWidth()) {
+private fun topBarDefault(title: String) {
+    TopAppBar(modifier = Modifier.fillMaxWidth(), backgroundColor = White) {
         Column(modifier = Modifier.weight(1f)) {
             Image(
                 painter = painterResource(R.drawable.logo_ile),
@@ -81,7 +81,8 @@ private fun topBarDefault() {
         }
         Column(Modifier.weight(8f)) {
             Text(
-                text = "Meu Ilê"
+                text = title,
+                fontWeight = FontWeight.Bold
             )
         }
     }
