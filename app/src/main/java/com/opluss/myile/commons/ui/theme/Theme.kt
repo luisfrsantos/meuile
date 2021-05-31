@@ -79,7 +79,7 @@ private fun topBarDefault(title: String) {
 
             )
         }
-        Column(Modifier.weight(8f)) {
+        Column(Modifier.weight(8f).padding(start = 4.dp)) {
             Text(
                 text = title,
                 fontWeight = FontWeight.Bold

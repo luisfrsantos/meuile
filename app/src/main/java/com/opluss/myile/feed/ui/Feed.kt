@@ -1,6 +1,7 @@
 package com.opluss.myile.feed.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -84,12 +85,24 @@ fun newsList() {
                     maxLines = 3
                 )
             }
-            Row(modifier = Modifier.weight(2f).fillMaxWidth()) {
-                Column(horizontalAlignment = Alignment.End, modifier = Modifier.fillMaxWidth()) {
+            Row(modifier = Modifier
+                .weight(2f)
+                .fillMaxWidth()) {
+                Column(horizontalAlignment = Alignment.Start, modifier = Modifier.weight(1f)) {
+                    Image(
+                        modifier = Modifier.padding(8.dp)
+                                            .clickable {},
+                        painter = painterResource(id = R.drawable.ic_baseline_favorite_border_24),
+                        contentDescription = "Like",
+                    )
+                }
+                Column(horizontalAlignment = Alignment.End, modifier = Modifier.weight(1f)) {
                     Text(text = "Leia mais ...",
                         color = Color.Blue,
-                        modifier = Modifier.padding(start = 8.dp, top = 8.dp,),
+                        modifier = Modifier.padding(start = 8.dp, top = 8.dp,)
+                                        .clickable {},
                         maxLines = 1
+
                     )
                 }
 
