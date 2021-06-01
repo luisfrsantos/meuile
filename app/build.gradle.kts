@@ -68,6 +68,8 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation ("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
     implementation ("androidx.navigation:navigation-compose:2.4.0-alpha01")
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.10.0")
+    implementation ("com.google.accompanist:accompanist-glide:0.10.0")
 
 
     testImplementation ("junit:junit:4.+")

@@ -1,4 +1,4 @@
-package com.opluss.myile.login.login
+package com.opluss.myile.login.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -27,6 +27,7 @@ fun LoginForm(navController: NavHostController) {
 
     val nameText = remember { mutableStateOf(TextFieldValue()) }
     val phoneText = remember { mutableStateOf(TextFieldValue()) }
+    val MAX_LINE = 1
 
     MyIleThemeNoActionBar {
         Column(
@@ -49,16 +50,17 @@ fun LoginForm(navController: NavHostController) {
                 onValueChange = {
                     nameText.value = it
                 },
+                maxLines = MAX_LINE,
                 label = { Text("Name") }
-
 
             )
             OutlinedTextField(
                 modifier = Modifier.padding(bottom = 16.dp),
                 value = phoneText.value,
                 onValueChange = {
-                    nameText.value = it
+                    phoneText.value = it
                 },
+                maxLines = MAX_LINE,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
                 label = { Text("Phone") }
             )
